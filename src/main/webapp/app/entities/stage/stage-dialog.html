@@ -98,7 +98,7 @@
 
         <div class="form-group">
             <label data-translate="taagliApp.stage.etudiant" for="field_etudiant">Etudiant</label>
-            <select class="form-control" id="field_etudiant" name="etudiant" ng-model="vm.stage.etudiant" ng-options="etudiant as etudiant.id for etudiant in vm.etudiants track by etudiant.id">
+            <select class="form-control" id="field_etudiant" name="etudiant" ng-model="vm.stage.etudiant" ng-options="etudiant as etudiant.identifiant for etudiant in vm.etudiants track by etudiant.id">
                 <option value=""></option>
             </select>
         </div>
