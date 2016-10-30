@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="taagliApp.enseignant.detail.title">Enseignant</span> {{vm.enseignant.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="taagliApp.enseignant.nomEns">Nom Ens</span></dt>
+        <dd>
+            <span>{{vm.enseignant.nomEns}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.enseignant.prenomEns">Prenom Ens</span></dt>
+        <dd>
+            <span>{{vm.enseignant.prenomEns}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.enseignant.telEns">Tel Ens</span></dt>
+        <dd>
+            <span>{{vm.enseignant.telEns}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.enseignant.mailEns">Mail Ens</span></dt>
+        <dd>
+            <span>{{vm.enseignant.mailEns}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="enseignant-detail.edit({id:vm.enseignant.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

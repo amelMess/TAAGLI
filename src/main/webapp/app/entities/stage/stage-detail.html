@@ -1,0 +1,67 @@
+
+<div>
+    <h2><span data-translate="taagliApp.stage.detail.title">Stage</span> {{vm.stage.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="taagliApp.stage.sujet">Sujet</span></dt>
+        <dd>
+            <span>{{vm.stage.sujet}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.stage.dureeEnSemaine">Duree En Semaine</span></dt>
+        <dd>
+            <span>{{vm.stage.dureeEnSemaine}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.stage.service">Service</span></dt>
+        <dd>
+            <span>{{vm.stage.service}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.stage.dateDebut">Date Debut</span></dt>
+        <dd>
+            <span>{{vm.stage.dateDebut | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.stage.dateFin">Date Fin</span></dt>
+        <dd>
+            <span>{{vm.stage.dateFin | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.stage.lang">Lang</span></dt>
+        <dd>
+            <span>{{vm.stage.lang}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.stage.materiel">Materiel</span></dt>
+        <dd>
+            <span>{{vm.stage.materiel}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.stage.description">Description</span></dt>
+        <dd>
+            <span>{{vm.stage.description}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.stage.etudiant">Etudiant</span></dt>
+        <dd>
+            <a ui-sref="etudiant-detail({id:vm.stage.etudiant.id})">{{vm.stage.etudiant.id}}</a>
+        </dd>
+        <dt><span data-translate="taagliApp.stage.entreprise">Entreprise</span></dt>
+        <dd>
+            <a ui-sref="entreprise-detail({id:vm.stage.entreprise.id})">{{vm.stage.entreprise.id}}</a>
+        </dd>
+        <dt><span data-translate="taagliApp.stage.encadrant">Encadrant</span></dt>
+        <dd>
+            <a ui-sref="encadrant-detail({id:vm.stage.encadrant.id})">{{vm.stage.encadrant.id}}</a>
+        </dd>
+        <dt><span data-translate="taagliApp.stage.enseignant">Enseignant</span></dt>
+        <dd>
+            <a ui-sref="enseignant-detail({id:vm.stage.enseignant.id})">{{vm.stage.enseignant.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="stage-detail.edit({id:vm.stage.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

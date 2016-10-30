@@ -1,0 +1,132 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myStageLabel" data-translate="taagliApp.stage.home.createOrEditLabel">Create or edit a Stage</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.stage.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.stage.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="taagliApp.stage.sujet" for="field_sujet">Sujet</label>
+            <input type="text" class="form-control" name="sujet" id="field_sujet"
+                    ng-model="vm.stage.sujet"
+                    required />
+            <div ng-show="editForm.sujet.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.sujet.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="taagliApp.stage.dureeEnSemaine" for="field_dureeEnSemaine">Duree En Semaine</label>
+            <input type="number" class="form-control" name="dureeEnSemaine" id="field_dureeEnSemaine"
+                    ng-model="vm.stage.dureeEnSemaine"
+                    required />
+            <div ng-show="editForm.dureeEnSemaine.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dureeEnSemaine.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.dureeEnSemaine.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="taagliApp.stage.service" for="field_service">Service</label>
+            <input type="text" class="form-control" name="service" id="field_service"
+                    ng-model="vm.stage.service"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="taagliApp.stage.dateDebut" for="field_dateDebut">Date Debut</label>
+                <div class="input-group">
+                    <input id="field_dateDebut" type="text" class="form-control" name="dateDebut" datetime-picker="{{dateformat}}" ng-model="vm.stage.dateDebut" is-open="vm.datePickerOpenStatus.dateDebut"
+                    required  />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateDebut')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.dateDebut.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dateDebut.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.dateDebut.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="taagliApp.stage.dateFin" for="field_dateFin">Date Fin</label>
+                <div class="input-group">
+                    <input id="field_dateFin" type="text" class="form-control" name="dateFin" datetime-picker="{{dateformat}}" ng-model="vm.stage.dateFin" is-open="vm.datePickerOpenStatus.dateFin"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateFin')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="taagliApp.stage.lang" for="field_lang">Lang</label>
+            <input type="text" class="form-control" name="lang" id="field_lang"
+                    ng-model="vm.stage.lang"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="taagliApp.stage.materiel" for="field_materiel">Materiel</label>
+            <input type="text" class="form-control" name="materiel" id="field_materiel"
+                    ng-model="vm.stage.materiel"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="taagliApp.stage.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.stage.description"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="taagliApp.stage.etudiant" for="field_etudiant">Etudiant</label>
+            <select class="form-control" id="field_etudiant" name="etudiant" ng-model="vm.stage.etudiant" ng-options="etudiant as etudiant.id for etudiant in vm.etudiants track by etudiant.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="taagliApp.stage.entreprise" for="field_entreprise">Entreprise</label>
+            <select class="form-control" id="field_entreprise" name="entreprise" ng-model="vm.stage.entreprise" ng-options="entreprise as entreprise.id for entreprise in vm.entreprises track by entreprise.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="taagliApp.stage.encadrant" for="field_encadrant">Encadrant</label>
+            <select class="form-control" id="field_encadrant" name="encadrant" ng-model="vm.stage.encadrant" ng-options="encadrant as encadrant.id for encadrant in vm.encadrants track by encadrant.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="taagliApp.stage.enseignant" for="field_enseignant">Enseignant</label>
+            <select class="form-control" id="field_enseignant" name="enseignant" ng-model="vm.stage.enseignant" ng-options="enseignant as enseignant.id for enseignant in vm.enseignants track by enseignant.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

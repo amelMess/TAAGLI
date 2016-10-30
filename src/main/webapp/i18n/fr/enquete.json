@@ -1,0 +1,25 @@
+{
+    "taagliApp": {
+        "enquete" : {
+            "home": {
+                "title": "Enquetes",
+                "createLabel": "Créer un nouveau Enquete",
+                "createOrEditLabel": "Créer ou éditer un Enquete",
+                "search": "Recherche pour Enquete"
+            },
+            "created": "Un nouveau Enquete a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Enquete avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Enquete avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Enquete {{ id }} ?"
+            },
+            "detail": {
+                "title": "Enquete"
+            },
+            "sujet": "Sujet",
+            "details": "Details",
+            "reponse": "Reponse",
+            "etudiant": "Etudiant"
+        }
+    }
+}

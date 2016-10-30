@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "etudiant",
+            "otherEntityName": "etudiant",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "niveau",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "etablissement",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161030121411",
+    "entityTableName": "formation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,56 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEncadrantLabel" data-translate="taagliApp.encadrant.home.createOrEditLabel">Create or edit a Encadrant</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.encadrant.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.encadrant.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="taagliApp.encadrant.nomEnc" for="field_nomEnc">Nom Enc</label>
+            <input type="text" class="form-control" name="nomEnc" id="field_nomEnc"
+                    ng-model="vm.encadrant.nomEnc"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="taagliApp.encadrant.prenomEnc" for="field_prenomEnc">Prenom Enc</label>
+            <input type="text" class="form-control" name="prenomEnc" id="field_prenomEnc"
+                    ng-model="vm.encadrant.prenomEnc"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="taagliApp.encadrant.telEnc" for="field_telEnc">Tel Enc</label>
+            <input type="text" class="form-control" name="telEnc" id="field_telEnc"
+                    ng-model="vm.encadrant.telEnc"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="taagliApp.encadrant.mailEnc" for="field_mailEnc">Mail Enc</label>
+            <input type="text" class="form-control" name="mailEnc" id="field_mailEnc"
+                    ng-model="vm.encadrant.mailEnc"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="taagliApp.encadrant.entreprise" for="field_entreprise">Entreprise</label>
+            <select class="form-control" id="field_entreprise" name="entreprise" ng-model="vm.encadrant.entreprise" ng-options="entreprise as entreprise.id for entreprise in vm.entreprises track by entreprise.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

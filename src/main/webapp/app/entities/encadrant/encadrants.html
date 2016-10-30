@@ -1,0 +1,66 @@
+<div>
+    <h2 data-translate="taagliApp.encadrant.home.title">Encadrants</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="encadrant.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="taagliApp.encadrant.home.createLabel">
+                        Create new Encadrant
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="taagliApp.encadrant.nomEnc">Nom Enc</span></th>
+                    <th><span data-translate="taagliApp.encadrant.prenomEnc">Prenom Enc</span></th>
+                    <th><span data-translate="taagliApp.encadrant.telEnc">Tel Enc</span></th>
+                    <th><span data-translate="taagliApp.encadrant.mailEnc">Mail Enc</span></th>
+                    <th><span data-translate="taagliApp.encadrant.entreprise">Entreprise</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="encadrant in vm.encadrants track by encadrant.id">
+                    <td><a ui-sref="encadrant-detail({id:encadrant.id})">{{encadrant.id}}</a></td>
+                    <td>{{encadrant.nomEnc}}</td>
+                    <td>{{encadrant.prenomEnc}}</td>
+                    <td>{{encadrant.telEnc}}</td>
+                    <td>{{encadrant.mailEnc}}</td>
+                    <td>
+                        <a ui-sref="entreprise-detail({id:encadrant.entreprise.id})">{{encadrant.entreprise.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="encadrant-detail({id:encadrant.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="encadrant.edit({id:encadrant.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="encadrant.delete({id:encadrant.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

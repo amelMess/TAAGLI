@@ -1,0 +1,94 @@
+
+
+entity Etudiant {
+	identifiant Integer required,
+	nom String required,
+	prenom String required,
+	sexe String,
+	tel String,
+	mail String,
+	adresse String,
+	dateNaissance ZonedDateTime,
+    	lieuNaissance String
+}
+
+entity Formation {
+        nom String required,
+        description String, 
+	niveau String,
+	etablissement String
+}
+
+entity Entreprise {
+	nom String required,
+	siret Integer required,
+        service String required,
+  	uRL String,
+	tel Integer
+}
+
+entity Adresse {
+
+	num Integer required,
+	rue String required,
+        codePostal Integer required,
+        ville String required,
+	region String required,
+	pays String required
+        
+}
+
+entity Enquete {
+        sujet String required,
+        details String required,
+        reponse String
+}
+
+entity Stage {
+	
+	
+        sujet String required,
+        dureeEnSemaine Integer required,
+        service String,
+        dateDebut ZonedDateTime required,
+        dateFin ZonedDateTime,
+        lang String,
+        materiel String,
+        description String   
+}
+
+entity Encadrant {
+
+   	nomEnc String,
+    	prenomEnc String,
+    	telEnc String,
+    	mailEnc String
+}
+
+entity Enseignant {
+
+   	nomEns String,
+    	prenomEns String,
+    	telEns String,
+    	mailEns String
+}
+
+relationship OneToMany {
+	Entreprise{stage} to Stage,
+    	Entreprise{adresse} to Adresse,
+    	Enseignant{stage} to Stage,
+    	Etudiant{stage} to Stage,
+    	Encadrant{stage} to Stage,
+        Entreprise{encadrant} to Encadrant
+}
+
+relationship ManyToOne {
+	Enquete{etudiant} to Etudiant
+}
+
+relationship ManyToMany {
+	Formation{etudiant} to Etudiant
+}
+    
+
+

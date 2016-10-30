@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "entreprise",
+            "otherEntityName": "entreprise",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "stage",
+            "otherEntityName": "stage",
+            "otherEntityRelationshipName": "encadrant"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nomEnc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenomEnc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telEnc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mailEnc",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161030121416",
+    "entityTableName": "encadrant",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

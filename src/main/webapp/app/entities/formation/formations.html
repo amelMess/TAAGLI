@@ -1,0 +1,68 @@
+<div>
+    <h2 data-translate="taagliApp.formation.home.title">Formations</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="formation.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="taagliApp.formation.home.createLabel">
+                        Create new Formation
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="taagliApp.formation.nom">Nom</span></th>
+                    <th><span data-translate="taagliApp.formation.description">Description</span></th>
+                    <th><span data-translate="taagliApp.formation.niveau">Niveau</span></th>
+                    <th><span data-translate="taagliApp.formation.etablissement">Etablissement</span></th>
+                    <th><span data-translate="taagliApp.formation.etudiant">Etudiant</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="formation in vm.formations track by formation.id">
+                    <td><a ui-sref="formation-detail({id:formation.id})">{{formation.id}}</a></td>
+                    <td>{{formation.nom}}</td>
+                    <td>{{formation.description}}</td>
+                    <td>{{formation.niveau}}</td>
+                    <td>{{formation.etablissement}}</td>
+                    <td>
+                        <span ng-repeat="etudiant in formation.etudiants">
+                            <a class="form-control-static" ui-sref="etudiant-detail({id: etudiant.id})">{{etudiant.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="formation-detail({id:formation.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="formation.edit({id:formation.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="formation.delete({id:formation.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

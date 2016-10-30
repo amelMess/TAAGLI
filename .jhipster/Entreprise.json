@@ -1,0 +1,59 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "stage",
+            "otherEntityName": "stage",
+            "otherEntityRelationshipName": "entreprise"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "adresse",
+            "otherEntityName": "adresse",
+            "otherEntityRelationshipName": "entreprise"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "encadrant",
+            "otherEntityName": "encadrant",
+            "otherEntityRelationshipName": "entreprise"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "siret",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "service",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "uRl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tel",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20161030121412",
+    "entityTableName": "entreprise",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

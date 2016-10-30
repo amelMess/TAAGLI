@@ -1,0 +1,64 @@
+<div>
+    <h2 data-translate="taagliApp.entreprise.home.title">Entreprises</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="entreprise.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="taagliApp.entreprise.home.createLabel">
+                        Create new Entreprise
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="taagliApp.entreprise.nom">Nom</span></th>
+                    <th><span data-translate="taagliApp.entreprise.siret">Siret</span></th>
+                    <th><span data-translate="taagliApp.entreprise.service">Service</span></th>
+                    <th><span data-translate="taagliApp.entreprise.uRl">U Rl</span></th>
+                    <th><span data-translate="taagliApp.entreprise.tel">Tel</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="entreprise in vm.entreprises track by entreprise.id">
+                    <td><a ui-sref="entreprise-detail({id:entreprise.id})">{{entreprise.id}}</a></td>
+                    <td>{{entreprise.nom}}</td>
+                    <td>{{entreprise.siret}}</td>
+                    <td>{{entreprise.service}}</td>
+                    <td>{{entreprise.uRl}}</td>
+                    <td>{{entreprise.tel}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="entreprise-detail({id:entreprise.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="entreprise.edit({id:entreprise.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="entreprise.delete({id:entreprise.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

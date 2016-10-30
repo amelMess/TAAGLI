@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "etudiant",
+            "otherEntityName": "etudiant",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "sujet",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "details",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "reponse",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161030121414",
+    "entityTableName": "enquete",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

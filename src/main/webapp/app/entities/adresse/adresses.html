@@ -1,0 +1,70 @@
+<div>
+    <h2 data-translate="taagliApp.adresse.home.title">Adresses</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="adresse.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="taagliApp.adresse.home.createLabel">
+                        Create new Adresse
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="taagliApp.adresse.num">Num</span></th>
+                    <th><span data-translate="taagliApp.adresse.rue">Rue</span></th>
+                    <th><span data-translate="taagliApp.adresse.codePostal">Code Postal</span></th>
+                    <th><span data-translate="taagliApp.adresse.ville">Ville</span></th>
+                    <th><span data-translate="taagliApp.adresse.region">Region</span></th>
+                    <th><span data-translate="taagliApp.adresse.pays">Pays</span></th>
+                    <th><span data-translate="taagliApp.adresse.entreprise">Entreprise</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="adresse in vm.adresses track by adresse.id">
+                    <td><a ui-sref="adresse-detail({id:adresse.id})">{{adresse.id}}</a></td>
+                    <td>{{adresse.num}}</td>
+                    <td>{{adresse.rue}}</td>
+                    <td>{{adresse.codePostal}}</td>
+                    <td>{{adresse.ville}}</td>
+                    <td>{{adresse.region}}</td>
+                    <td>{{adresse.pays}}</td>
+                    <td>
+                        <a ui-sref="entreprise-detail({id:adresse.entreprise.id})">{{adresse.entreprise.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="adresse-detail({id:adresse.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="adresse.edit({id:adresse.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="adresse.delete({id:adresse.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

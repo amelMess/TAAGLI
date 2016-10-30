@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="taagliApp.encadrant.detail.title">Encadrant</span> {{vm.encadrant.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="taagliApp.encadrant.nomEnc">Nom Enc</span></dt>
+        <dd>
+            <span>{{vm.encadrant.nomEnc}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.encadrant.prenomEnc">Prenom Enc</span></dt>
+        <dd>
+            <span>{{vm.encadrant.prenomEnc}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.encadrant.telEnc">Tel Enc</span></dt>
+        <dd>
+            <span>{{vm.encadrant.telEnc}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.encadrant.mailEnc">Mail Enc</span></dt>
+        <dd>
+            <span>{{vm.encadrant.mailEnc}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.encadrant.entreprise">Entreprise</span></dt>
+        <dd>
+            <a ui-sref="entreprise-detail({id:vm.encadrant.entreprise.id})">{{vm.encadrant.entreprise.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="encadrant-detail.edit({id:vm.encadrant.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

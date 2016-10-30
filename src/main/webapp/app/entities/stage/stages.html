@@ -1,0 +1,86 @@
+<div>
+    <h2 data-translate="taagliApp.stage.home.title">Stages</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="stage.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="taagliApp.stage.home.createLabel">
+                        Create new Stage
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="taagliApp.stage.sujet">Sujet</span></th>
+                    <th><span data-translate="taagliApp.stage.dureeEnSemaine">Duree En Semaine</span></th>
+                    <th><span data-translate="taagliApp.stage.service">Service</span></th>
+                    <th><span data-translate="taagliApp.stage.dateDebut">Date Debut</span></th>
+                    <th><span data-translate="taagliApp.stage.dateFin">Date Fin</span></th>
+                    <th><span data-translate="taagliApp.stage.lang">Lang</span></th>
+                    <th><span data-translate="taagliApp.stage.materiel">Materiel</span></th>
+                    <th><span data-translate="taagliApp.stage.description">Description</span></th>
+                    <th><span data-translate="taagliApp.stage.etudiant">Etudiant</span></th>
+                    <th><span data-translate="taagliApp.stage.entreprise">Entreprise</span></th>
+                    <th><span data-translate="taagliApp.stage.encadrant">Encadrant</span></th>
+                    <th><span data-translate="taagliApp.stage.enseignant">Enseignant</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="stage in vm.stages track by stage.id">
+                    <td><a ui-sref="stage-detail({id:stage.id})">{{stage.id}}</a></td>
+                    <td>{{stage.sujet}}</td>
+                    <td>{{stage.dureeEnSemaine}}</td>
+                    <td>{{stage.service}}</td>
+                    <td>{{stage.dateDebut | date:'medium'}}</td>
+                    <td>{{stage.dateFin | date:'medium'}}</td>
+                    <td>{{stage.lang}}</td>
+                    <td>{{stage.materiel}}</td>
+                    <td>{{stage.description}}</td>
+                    <td>
+                        <a ui-sref="etudiant-detail({id:stage.etudiant.id})">{{stage.etudiant.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="entreprise-detail({id:stage.entreprise.id})">{{stage.entreprise.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="encadrant-detail({id:stage.encadrant.id})">{{stage.encadrant.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="enseignant-detail({id:stage.enseignant.id})">{{stage.enseignant.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="stage-detail({id:stage.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="stage.edit({id:stage.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="stage.delete({id:stage.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

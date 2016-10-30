@@ -1,0 +1,62 @@
+<div>
+    <h2 data-translate="taagliApp.enseignant.home.title">Enseignants</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="enseignant.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="taagliApp.enseignant.home.createLabel">
+                        Create new Enseignant
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="taagliApp.enseignant.nomEns">Nom Ens</span></th>
+                    <th><span data-translate="taagliApp.enseignant.prenomEns">Prenom Ens</span></th>
+                    <th><span data-translate="taagliApp.enseignant.telEns">Tel Ens</span></th>
+                    <th><span data-translate="taagliApp.enseignant.mailEns">Mail Ens</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="enseignant in vm.enseignants track by enseignant.id">
+                    <td><a ui-sref="enseignant-detail({id:enseignant.id})">{{enseignant.id}}</a></td>
+                    <td>{{enseignant.nomEns}}</td>
+                    <td>{{enseignant.prenomEns}}</td>
+                    <td>{{enseignant.telEns}}</td>
+                    <td>{{enseignant.mailEns}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="enseignant-detail({id:enseignant.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="enseignant.edit({id:enseignant.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="enseignant.delete({id:enseignant.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

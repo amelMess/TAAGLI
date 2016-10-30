@@ -1,0 +1,27 @@
+{
+    "taagliApp": {
+        "encadrant" : {
+            "home": {
+                "title": "Encadrants",
+                "createLabel": "Créer un nouveau Encadrant",
+                "createOrEditLabel": "Créer ou éditer un Encadrant",
+                "search": "Recherche pour Encadrant"
+            },
+            "created": "Un nouveau Encadrant a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Encadrant avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Encadrant avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Encadrant {{ id }} ?"
+            },
+            "detail": {
+                "title": "Encadrant"
+            },
+            "nomEnc": "Nom Enc",
+            "prenomEnc": "Prenom Enc",
+            "telEnc": "Tel Enc",
+            "mailEnc": "Mail Enc",
+            "entreprise": "Entreprise",
+            "stage": "Stage"
+        }
+    }
+}

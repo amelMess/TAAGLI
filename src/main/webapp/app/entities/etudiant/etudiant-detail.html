@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="taagliApp.etudiant.detail.title">Etudiant</span> {{vm.etudiant.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="taagliApp.etudiant.identifiant">Identifiant</span></dt>
+        <dd>
+            <span>{{vm.etudiant.identifiant}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.etudiant.nom">Nom</span></dt>
+        <dd>
+            <span>{{vm.etudiant.nom}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.etudiant.prenom">Prenom</span></dt>
+        <dd>
+            <span>{{vm.etudiant.prenom}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.etudiant.sexe">Sexe</span></dt>
+        <dd>
+            <span>{{vm.etudiant.sexe}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.etudiant.tel">Tel</span></dt>
+        <dd>
+            <span>{{vm.etudiant.tel}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.etudiant.mail">Mail</span></dt>
+        <dd>
+            <span>{{vm.etudiant.mail}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.etudiant.adresse">Adresse</span></dt>
+        <dd>
+            <span>{{vm.etudiant.adresse}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.etudiant.dateNaissance">Date Naissance</span></dt>
+        <dd>
+            <span>{{vm.etudiant.dateNaissance | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="taagliApp.etudiant.lieuNaissance">Lieu Naissance</span></dt>
+        <dd>
+            <span>{{vm.etudiant.lieuNaissance}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="etudiant-detail.edit({id:vm.etudiant.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
