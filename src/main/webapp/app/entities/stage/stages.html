@@ -14,6 +14,11 @@
         </div>
     </div>
     <br/>
+    <div>
+        <label>Search:</label>
+        <input type="search" ng-model="search" placeholder="Enter to Search">
+    </div>
+
     <div class="table-responsive">
         <table class="jh-table table table-striped">
             <thead>
@@ -36,7 +41,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="stage in vm.stages track by stage.id">
+                <tr ng-repeat="stage in vm.stages  | filter:search | filter:new_search">
                     <td><a ui-sref="stage-detail({id:stage.id})">{{stage.id}}</a></td>
                     <td>
                         <a ui-sref="etudiant-detail({id:stage.etudiant.id})">{{stage.etudiant.id}}</a>
