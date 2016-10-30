@@ -27,9 +27,9 @@
             <form ng-show="!vm.success" name="form" role="form" novalidate ng-submit="vm.register()" show-validation>
 
                 <div class="form-group">
-                    <label class="control-label" for="login" data-translate="global.form.username">Username</label>
-                    <input type="text" class="form-control" id="login" name="login" placeholder="{{'global.form.username.placeholder' | translate}}"
-                           ng-model="vm.registerAccount.login" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z0-9-]*$/" required>
+                    <label class="control-label" for="login">Identifiant</label>
+                    <input type="text" class="form-control" id="login" name="login" placeholder="Votre identifiant étudiant"
+                           ng-model="vm.registerAccount.login" ng-minlength=8 ng-maxlength=8 ng-pattern="/^[0-9]*$/" required>
                     <div ng-show="form.login.$dirty && form.login.$invalid">
                         <p class="help-block"
                                ng-show="form.login.$error.required" data-translate="register.messages.validate.login.required">
@@ -115,9 +115,7 @@
                 <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" data-translate="register.form.button">Register</button>
             </form>
             <p></p>
-            <div class="alert alert-warning" data-translate="global.messages.info.authenticated" translate-compile>
-                If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
-            </div>
+
         </div>
     </div>
 </div>
