@@ -55,9 +55,13 @@
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="taagliApp.etudiant.sexe" for="field_sexe">Sexe</label>
-            <input type="text" class="form-control" name="sexe" id="field_sexe"
-                    ng-model="vm.etudiant.sexe"
-                     />
+            <select type="text" class="form-control" name="sexe" id="field_sexe"
+                    ng-model="vm.etudiant.sexe">
+
+                <option value="Femme">Femme</option>
+                <option value="Homme">Homme</option>
+            </select>
+
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="taagliApp.etudiant.tel" for="field_tel">Tel</label>

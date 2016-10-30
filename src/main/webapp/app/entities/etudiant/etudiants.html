@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="etudiant.new" >
+                <button class="btn btn-primary" ui-sref="etudiant.new" ui-sref-active="active" has-authority="ROLE_ADMIN" >
                     <span class="glyphicon glyphicon-plus"></span>
                     <span  data-translate="taagliApp.etudiant.home.createLabel">
                         Create new Etudiant
@@ -61,7 +61,7 @@
                                     ui-sref="etudiant.delete({id:etudiant.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete" ui-sref-active="active" has-authority="ROLE_ADMIN" ></span>
                             </button>
                         </div>
                     </td>

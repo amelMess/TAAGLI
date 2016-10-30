@@ -98,11 +98,14 @@ Main page styles
 }
 
 .Istic {
-    margin: auto;
+    margin: 0 auto;
     width: 347px;
     height: 180px;
     background: url("../../content/images/LogoIsticRvbFr.png") no-repeat center top;
     background-size: contain;
+    display: block;
+
+
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */

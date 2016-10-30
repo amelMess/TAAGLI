@@ -19,44 +19,47 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="taagliApp.stage.sujet">Sujet</span></th>
-                    <th><span data-translate="taagliApp.stage.dureeEnSemaine">Duree En Semaine</span></th>
-                    <th><span data-translate="taagliApp.stage.service">Service</span></th>
-                    <th><span data-translate="taagliApp.stage.dateDebut">Date Debut</span></th>
-                    <th><span data-translate="taagliApp.stage.dateFin">Date Fin</span></th>
-                    <th><span data-translate="taagliApp.stage.lang">Lang</span></th>
-                    <th><span data-translate="taagliApp.stage.materiel">Materiel</span></th>
-                    <th><span data-translate="taagliApp.stage.description">Description</span></th>
                     <th><span data-translate="taagliApp.stage.etudiant">Etudiant</span></th>
                     <th><span data-translate="taagliApp.stage.entreprise">Entreprise</span></th>
+                    <th><span data-translate="taagliApp.stage.service">Service</span></th>
                     <th><span data-translate="taagliApp.stage.encadrant">Encadrant</span></th>
                     <th><span data-translate="taagliApp.stage.enseignant">Enseignant</span></th>
+                    <th><span data-translate="taagliApp.stage.sujet">Sujet</span></th>
+                    <th><span data-translate="taagliApp.stage.description">Description</span></th>
+                    <th><span data-translate="taagliApp.stage.dureeEnSemaine">Duree En Semaine</span></th>
+                    <th><span data-translate="taagliApp.stage.dateDebut">Date Debut</span></th>
+                    <th><span data-translate="taagliApp.stage.dateFin">Date Fin</span></th>
+                    <th><span data-translate="taagliApp.stage.lang">Language</span></th>
+                    <th><span data-translate="taagliApp.stage.materiel">Materiel</span></th>
+
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="stage in vm.stages track by stage.id">
                     <td><a ui-sref="stage-detail({id:stage.id})">{{stage.id}}</a></td>
-                    <td>{{stage.sujet}}</td>
-                    <td>{{stage.dureeEnSemaine}}</td>
-                    <td>{{stage.service}}</td>
-                    <td>{{stage.dateDebut | date:'medium'}}</td>
-                    <td>{{stage.dateFin | date:'medium'}}</td>
-                    <td>{{stage.lang}}</td>
-                    <td>{{stage.materiel}}</td>
-                    <td>{{stage.description}}</td>
                     <td>
                         <a ui-sref="etudiant-detail({id:stage.etudiant.id})">{{stage.etudiant.id}}</a>
                     </td>
                     <td>
                         <a ui-sref="entreprise-detail({id:stage.entreprise.id})">{{stage.entreprise.id}}</a>
                     </td>
+                    <td>{{stage.service}}</td>
                     <td>
                         <a ui-sref="encadrant-detail({id:stage.encadrant.id})">{{stage.encadrant.id}}</a>
                     </td>
                     <td>
                         <a ui-sref="enseignant-detail({id:stage.enseignant.id})">{{stage.enseignant.id}}</a>
                     </td>
+
+                    <td>{{stage.sujet}}</td>
+                    <td>{{stage.description}}</td>
+                    <td>{{stage.dureeEnSemaine}}</td>
+                    <td>{{stage.dateDebut | date:'medium'}}</td>
+                    <td>{{stage.dateFin | date:'medium'}}</td>
+                    <td>{{stage.lang}}</td>
+                    <td>{{stage.materiel}}</td>
+
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
