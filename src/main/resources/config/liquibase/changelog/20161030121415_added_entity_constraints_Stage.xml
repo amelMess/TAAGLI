@@ -7,12 +7,12 @@
         Added the constraints for entity Stage.
     -->
     <changeSet id="20161030121415-2" author="jhipster">
-        
+
         <addForeignKeyConstraint baseColumnNames="etudiant_id"
                                  baseTableName="stage"
-                                 constraintName="fk_stage_etudiant_id"
+                                 constraintName="fk_stage_user_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="etudiant"/>
+                                 referencedTableName="jhi_user"/>
 
         <addForeignKeyConstraint baseColumnNames="entreprise_id"
                                  baseTableName="stage"
