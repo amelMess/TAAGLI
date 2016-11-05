@@ -9,7 +9,15 @@
 
     function StageDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Stage, Etudiant, Entreprise, Encadrant, Enseignant, Principal, Auth, JhiLanguageService, $translate ) {
         var vm = this;
-
+        vm.stage = entity;
+        vm.clear = clear;
+        vm.datePickerOpenStatus = {};
+        vm.openCalendar = openCalendar;
+        vm.save = save;
+        vm.etudiants = Etudiant.query();
+        vm.entreprises = Entreprise.query();
+        vm.encadrants = Encadrant.query();
+        vm.enseignants = Enseignant.query();
 
 
         vm.error = null;
@@ -34,16 +42,8 @@
 
         Principal.identity().then(function(account) {
             vm.settingsAccount = copyAccount(account);
-           //console.log(vm.settingsAccount.login);
-            vm.stage = entity;
-            vm.clear = clear;
-            vm.datePickerOpenStatus = {};
-            vm.openCalendar = openCalendar;
-            vm.save = save;
-            vm.etudiants = vm.settingsAccount.login;
-            vm.entreprises = Entreprise.query();
-            vm.encadrants = Encadrant.query();
-            vm.enseignants = Enseignant.query();
+            console.log(vm.settingsAccount.login);
+
 
         });
 
