@@ -11,8 +11,14 @@
         <addForeignKeyConstraint baseColumnNames="etudiant_id"
                                  baseTableName="stage"
                                  constraintName="fk_stage_user_id"
-                                 referencedColumnNames="id"
+                                 referencedColumnNames="login"
                                  referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="etudiant_id"
+                                 baseTableName="stage"
+                                 constraintName="fk_stage_etudiant_id"
+                                 referencedColumnNames="identifiant"
+                                 referencedTableName="etudiant"/>
 
         <addForeignKeyConstraint baseColumnNames="entreprise_id"
                                  baseTableName="stage"

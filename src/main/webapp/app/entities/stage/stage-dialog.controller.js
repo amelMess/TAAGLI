@@ -5,20 +5,47 @@
         .module('taagliApp')
         .controller('StageDialogController', StageDialogController);
 
-    StageDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Stage', 'Etudiant', 'Entreprise', 'Encadrant', 'Enseignant'];
+    StageDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Stage', 'Etudiant', 'Entreprise', 'Encadrant', 'Enseignant', 'Principal', 'Auth', 'JhiLanguageService', '$translate'];
 
-    function StageDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Stage, Etudiant, Entreprise, Encadrant, Enseignant) {
+    function StageDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Stage, Etudiant, Entreprise, Encadrant, Enseignant, Principal, Auth, JhiLanguageService, $translate ) {
         var vm = this;
 
-        vm.stage = entity;
-        vm.clear = clear;
-        vm.datePickerOpenStatus = {};
-        vm.openCalendar = openCalendar;
-        vm.save = save;
-        vm.etudiants = Etudiant.query();
-        vm.entreprises = Entreprise.query();
-        vm.encadrants = Encadrant.query();
-        vm.enseignants = Enseignant.query();
+
+
+        vm.error = null;
+        vm.settingsAccount = null;
+        vm.success = null;
+
+        /**
+         * Store the "settings account" in a separate variable, and not in the shared "account" variable.
+         */
+        var copyAccount = function (account) {
+            return {
+                activated: account.activated,
+                email: account.email,
+                firstName: account.firstName,
+                langKey: account.langKey,
+                lastName: account.lastName,
+                login: account.login
+            };
+        };
+       /* var login = account.login;
+        console.log(login);*/
+
+        Principal.identity().then(function(account) {
+            vm.settingsAccount = copyAccount(account);
+           //console.log(vm.settingsAccount.login);
+            vm.stage = entity;
+            vm.clear = clear;
+            vm.datePickerOpenStatus = {};
+            vm.openCalendar = openCalendar;
+            vm.save = save;
+            vm.etudiants = vm.settingsAccount.login;
+            vm.entreprises = Entreprise.query();
+            vm.encadrants = Encadrant.query();
+            vm.enseignants = Enseignant.query();
+
+        });
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
